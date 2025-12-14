@@ -11,4 +11,6 @@ urlpatterns = [
 
     path('orders/create/', OrderCreateView.as_view()),
     path('orders/history/', OrderHistoryView.as_view()),
+    path('foods/<int:pk>/update/', FoodUpdateView.as_view()),
+    path('foods/<int:pk>/delete/', FoodDeleteView.as_view()),
 ]

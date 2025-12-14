@@ -34,6 +34,13 @@ class OrderSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         items = validated_data.pop('items')
         order = Order.objects.create(user=self.context['request'].user)
+
         for item in items:
-            OrderItem.objects.create(order=order, **item)
+            OrderItem.objects.create(
+                order=order,
+                food=item['food'],
+                quantity=item['quantity'],
+                price=item['food'].price
+            )
+
         return order
