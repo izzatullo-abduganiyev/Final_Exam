@@ -32,18 +32,23 @@ Ovqat buyurtma qilish tizimi uchun yozilgan **Django REST API** backend loyiha.
 
 ---
 
-## 📂 API Endpointlar
+## 📡 API Endpoints
 
 ### 🔐 Authentication
-
 POST /api/auth/register/  
 POST /api/auth/login/
 
+---
 
 ### 🍔 Foods
+GET /api/foods/  
+GET /api/foods/?category=fast_food  
+GET /api/foods/?page=1  
 
-GET /api/foods/
-GET /api/foods/?category=fast_food
-GET /api/foods/?page=1
+POST /api/foods/add/ (admin)
 
-POST /api/foods/add/   (admin)
+---
+
+### 🛒 Orders
+POST /api/orders/create/  
+GET  /api/orders/history/
